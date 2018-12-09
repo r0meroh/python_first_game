@@ -1,2 +1,12 @@
 # game will utilize graphics.py as opposed to turtle graphics
-print("first game")
+import turtle
+import os
+
+# screen set up
+win = turtle.Screen()
+win.bgcolor("black")
+win.title("pup space game")
+
+
+
+delay = input("press enter to exit")
