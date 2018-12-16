@@ -106,6 +106,13 @@ def player_fire():
      bullet.showturtle()
 
 
+def collision(t1, t2):
+    distance = math.sqrt(math.pow(t1.xcor()-t2.xcor(),2)+math.pow(t1.ycor()-t2.ycor(),2))
+    if distance < 15:
+        return True
+    else:
+        return False
+
 
 win.listen()
 win.onkey(move_left,"Left")
