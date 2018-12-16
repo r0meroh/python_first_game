@@ -1,6 +1,7 @@
 # game will utilize graphics.py as opposed to turtle graphics
 from turtle import *
 from random import *
+from math import *
 import os
 
 # screen set up
@@ -106,12 +107,13 @@ def player_fire():
      bullet.showturtle()
 
 
-def collision(t1, t2):
-    distance = math.sqrt(math.pow(t1.xcor()-t2.xcor(),2)+math.pow(t1.ycor()-t2.ycor(),2))
+def isCollision(t1, t2):
+    distance = sqrt(pow(t1.xcor()-t2.xcor(),2)+pow(t1.ycor()-t2.ycor(),2))
     if distance < 15:
         return True
     else:
         return False
+
 
 
 win.listen()
@@ -148,6 +150,23 @@ while True:
     if bullet.ycor() > 280:
         bullet.hideturtle()
         bullet_state = "ready"
+
+
+    # check for collision
+    if isCollision(bullet, enemy):
+       # reset bullet
+       bullet.hideturtle()
+       bullet_state = "ready"
+       bullet.setposition(0, -400)
+       # reset enemy that was hit
+       enemy.setposition(-200,250)
+
+
+    if isCollision(player, enemy):
+        player.hideturtle()
+        enemy.hideturtle()
+        print("game over")
+        break
 
 
 # mainloop()
