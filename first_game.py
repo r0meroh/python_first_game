@@ -27,6 +27,7 @@ border_pen.hideturtle()
 
 
 Screen().register_shape("space_cat.gif")
+Screen().register_shape("bone.gif")
 # score section
 score = 0
 
@@ -77,7 +78,7 @@ for enemy in enemies:
 # missle
 bullet = Turtle()
 bullet.color("red", "yellow")
-bullet.shape("arrow")
+bullet.shape("bone.gif")
 bullet.penup()
 bullet.speed(0)
 bullet.setheading(90)
