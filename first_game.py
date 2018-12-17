@@ -4,11 +4,12 @@ from turtle import Turtle,Screen
 from random import *
 from math import *
 import os
-
+from mpg123 import *
 # screen set up
 win = Screen()
 win.bgcolor("black")
-win.title("pup space game")
+win.title("Frenchie in Space Game")
+win.bgpic("Space.gif")
 
 
 
@@ -68,6 +69,7 @@ for enemy in enemies:
    # enemy = Turtle()
    # enemy.color(choice(colors))
    enemy.shape("space_cat.gif")
+   os.system("aplay cat_meow2.wav&")
    enemy.penup()
    enemy.speed(0)
    x = randint(-200,200)
@@ -129,6 +131,8 @@ def player_fire():
     global bullet_state
 
     if bullet_state == "ready":
+     os.system("aplay dog_bark_x.wav&")
+     os.system("aplay Arrow+Swoosh+1.wav&")
      bullet_state = "fire"
      x = player.xcor()
      y = player.ycor() + 5
@@ -177,6 +181,8 @@ while True:
 
         if isCollision(bullet, enemy):
             # reset bullet
+            os.system("aplay cat_growl.wav&")
+            os.system("aplay Explosion+3.wav&")
             bullet.hideturtle()
             bullet_state = "ready"
             bullet.setposition(0, -400)
@@ -189,6 +195,7 @@ while True:
             score_pen.write(score_string, False, align="left", font=("Arial", 14, "normal"))
 
         if isCollision(player, enemy):
+            os.system("aplay dog_whine.wav&")
             player.hideturtle()
             enemy.hideturtle()
             print("game over")
