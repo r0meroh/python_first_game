@@ -28,6 +28,7 @@ border_pen.hideturtle()
 
 Screen().register_shape("space_cat.gif")
 Screen().register_shape("bone.gif")
+Screen().register_shape("frenchie.gif")
 # score section
 score = 0
 
@@ -43,7 +44,7 @@ score_pen.hideturtle()
 # create the character object
 player = Turtle()
 player.color("blue")
-player.shape("triangle")
+player.shape("frenchie.gif")
 player.penup()
 player.speed(0)
 player.setposition(0,-250)
