@@ -22,6 +22,19 @@ for side in range(4):
     border_pen.lt(90)
 border_pen.hideturtle()
 
+
+# score section
+score = 0
+
+score_pen = Turtle()
+score_pen.speed(0)
+score_pen.color("white")
+score_pen.penup()
+score_pen.setposition(-290,280)
+
+score_string = "Score: %s" %score
+score_pen.write(score_string, False, align="left", font=("Arial", 14, "normal" ))
+score_pen.hideturtle()
 # create the character object
 player = Turtle()
 player.color("blue")
@@ -162,6 +175,11 @@ while True:
             bullet.setposition(0, -400)
             # reset enemy that was hit
             enemy.setposition(-200, 250)
+            # add points to score
+            score += 10
+            score_string = "Score: %s" %score
+            score_pen.clear()
+            score_pen.write(score_string, False, align="left", font=("Arial", 14, "normal"))
 
         if isCollision(player, enemy):
             player.hideturtle()
