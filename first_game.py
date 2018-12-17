@@ -141,16 +141,19 @@ while True:
         enemy.setx(x)
 
         if enemy.xcor() > 285:
-            y = enemy.ycor()
-            y -= 40
-            enemy_speed *= -1
-            enemy.sety(y)
+            # moves all enemies down
+            for e in enemies:
+               y = e.ycor()
+               y -= 40
+               enemy_speed *= -1
+               e.sety(y)
+            enemy_speed *= 1
 
         if enemy.xcor() < -280:
-            y = enemy.ycor()
+            y = e.ycor()
             y -= 40
             enemy_speed *= -1
-            enemy.sety(y)
+            e.sety(y)
 
         if isCollision(bullet, enemy):
             # reset bullet
@@ -174,6 +177,8 @@ while True:
     if bullet.ycor() > 280:
        bullet.hideturtle()
        bullet_state = "ready"
+
+
 
 
         # check for collision
