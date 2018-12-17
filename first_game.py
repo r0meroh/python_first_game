@@ -1,5 +1,6 @@
 # game will utilize graphics.py as opposed to turtle graphics
 from turtle import *
+from turtle import Turtle,Screen
 from random import *
 from math import *
 import os
@@ -8,6 +9,8 @@ import os
 win = Screen()
 win.bgcolor("black")
 win.title("pup space game")
+
+
 
 # draw a border
 border_pen = Turtle()
@@ -23,6 +26,7 @@ for side in range(4):
 border_pen.hideturtle()
 
 
+Screen().register_shape("space_cat.gif")
 # score section
 score = 0
 
@@ -56,11 +60,12 @@ for i in range(number_of_enemies):
 
 # enemy
 for enemy in enemies:
-   colors = ["red", "purple", "green", "yellow"]
-   shapes = ["circle", "square", "turtle", "classic"]
+   # colors = ["red", "purple", "green", "yellow"]
+   # shapes = ["circle", "square", "turtle", "classic"]
+
    # enemy = Turtle()
-   enemy.color(choice(colors))
-   enemy.shape(choice(shapes))
+   # enemy.color(choice(colors))
+   enemy.shape("space_cat.gif")
    enemy.penup()
    enemy.speed(0)
    x = randint(-200,200)
