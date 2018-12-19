@@ -26,22 +26,22 @@ for side in range(4):
     border_pen.lt(90)
 border_pen.hideturtle()
 
-
+# register custom graphics to assigned turtles
 Screen().register_shape("space_cat.gif")
 Screen().register_shape("bone.gif")
 Screen().register_shape("frenchie.gif")
-# score section
-score = 0
 
+# score section.  Assign turtle and score accumilation
+score = 0
 score_pen = Turtle()
 score_pen.speed(0)
 score_pen.color("white")
 score_pen.penup()
 score_pen.setposition(-290,280)
-
 score_string = "Score: %s" %score
 score_pen.write(score_string, False, align="left", font=("Arial", 14, "normal" ))
 score_pen.hideturtle()
+
 # create the character object
 player = Turtle()
 player.color("blue")
@@ -51,17 +51,17 @@ player.speed(0)
 player.setposition(0,-250)
 player.setheading(90)
 
-
+# palyer movement variable
 player_Speed = 15
-# number of enemies
+# number of enemies, assigned to a list
 number_of_enemies = 5
 enemies = []
-
+# create enemy turtles to the length of the enemies list object
 for i in range(number_of_enemies):
     enemies.append(Turtle())
 
 
-# enemy
+# enemy parameters
 for enemy in enemies:
    # colors = ["red", "purple", "green", "yellow"]
    # shapes = ["circle", "square", "turtle", "classic"]
@@ -78,7 +78,7 @@ for enemy in enemies:
    enemy_speed = 5
 
 
-# missle
+# missle parameters
 bullet = Turtle()
 bullet.color("red", "yellow")
 bullet.shape("bone.gif")
@@ -94,7 +94,7 @@ bullet_speed = 20
 # bullet stages: ready and fire
 bullet_state = "ready"
 
-# move left
+# player object movement functions
 def move_left():
     x = player.xcor()
     x -= player_Speed
@@ -126,7 +126,7 @@ def move_down():
         y = -273
     player.sety(y)
 
-
+# player projectile functions
 def player_fire():
     global bullet_state
 
@@ -139,7 +139,7 @@ def player_fire():
      bullet.setposition(x,y)
      bullet.showturtle()
 
-
+# collision detection
 def isCollision(t1, t2):
     distance = sqrt(pow(t1.xcor()-t2.xcor(),2)+pow(t1.ycor()-t2.ycor(),2))
     if distance < 15:
@@ -148,7 +148,7 @@ def isCollision(t1, t2):
         return False
 
 
-
+# input function calls
 win.listen()
 win.onkey(move_left,"Left")
 win.onkey(move_right,"Right")
@@ -156,6 +156,8 @@ win.onkey(move_up,"Up")
 win.onkey(move_down,"Down")
 win.onkey(player_fire, "space")
 
+
+#game loop
 while True:
 
     for enemy in enemies:
