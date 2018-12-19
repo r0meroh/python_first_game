@@ -181,6 +181,10 @@ while True:
             enemy_speed *= -1
             e.sety(y)
 
+        # respawn enemies when they travel beyond the bottom of the window
+        if enemy.ycor() < -285:
+            enemy.setposition(-200,250)
+
         if isCollision(bullet, enemy):
             # reset bullet
             os.system("aplay cat_growl.wav&")
@@ -195,6 +199,9 @@ while True:
             score_string = "Score: %s" %score
             score_pen.clear()
             score_pen.write(score_string, False, align="left", font=("Arial", 14, "normal"))
+            # speed up enemies
+            enemy_speed += 2
+
 
         if isCollision(player, enemy):
             os.system("aplay dog_whine.wav&")
