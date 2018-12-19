@@ -8,7 +8,9 @@ The libraries show which frameworks are mistakenly used or "called" when trying 
 inside python3.
 
 The program has a foundation of a python game tutotial "SPACE Invaders" for python2, but not only is the program written onto
-python3, it also required debugging and additonal code to compensate for library functions that are unaccessible outside of python2.
+python3, it also required debugging and additonal code to compensate for library functions that are unaccessible outside of python2.  The tutorial also implemented the program under a Mac osx environment, this program was rewritten and changes were made
+to be able to adapt to the Linux/Ubuntu environment.  
+
 The program includes the following added features/functionality:
 Player can move all around the screen with functioning missile release from any point the player is located on screen.
 Custom drawn (.gif) files that are incorporated into the program.
