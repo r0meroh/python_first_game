@@ -15,3 +15,14 @@ The program includes the following added features/functionality:
 Player can move all around the screen with functioning missile release from any point the player is located on screen.
 Custom drawn (.gif) files that are incorporated into the program.
 mulitple sounds triggered under certain events which may also be layered.
+
+Notes:
+The game has to be manually terminated by the user in one of two ways:
+Closing the graphics window.
+Pressing the ENTER key inside the console.
+
+The cat objects do not reiterate if they travel outside the scope of the window, therefore those enemies do not respawn.
+
+Due to limitations, the bone object is still tracted after a collision and although hidden, it may collide with additional enemies.
+
+Game doesn't end when player is hit, not does the player respawn.
