@@ -181,7 +181,7 @@ while True:
             enemy_speed *= -1
             e.sety(y)
 
-        # respawn enemies when they travel beyond the bottom of the window
+        # respawn enemies when they travel beyond the bottom of the playable window
         if enemy.ycor() < -285:
             enemy.setposition(-200,250)
 
