@@ -21,7 +21,7 @@ The game has to be manually terminated by the user in one of two ways:
 Closing the graphics window.
 Pressing the ENTER key inside the console.
 
-The cat objects do not reiterate if they travel outside the scope of the window, therefore those enemies do not respawn.
+The cat objects do not reiterate if they travel outside the scope of the window, therefore those enemies do not respawn.[FIXED]
 
 Due to limitations, the bone object is still tracted after a collision and although hidden, it may collide with additional enemies.
 
